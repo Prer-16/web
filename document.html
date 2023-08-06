@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <img src="https://tse4.mm.bing.net/th?id=OIP.PNiA2cvdKXYBn29E5tnqVAHaEU&pid=Api&P=0&h=180" alt="data">
+</head>
+<body>
+    <h1>Upload Files, Images, and Videos</h1><br>
+    <h2>YOUR SAFETY IS OUR PRIORITY</h2>
+    <h2>Do save your import files here!!</h2>
+    
+    <!-- File input for files -->
+    <label for="fileInput">Upload Files:</label>
+    <input type="file" id="fileInput" multiple>
+
+    <!-- File input for images -->
+    <label for="imageInput">Upload Images:</label>
+    <input type="file" id="imageInput" accept="image/*" multiple>
+
+    <!-- File input for videos -->
+    <label for="videoInput">Upload Videos:</label>
+    <input type="file" id="videoInput" accept="video/*" multiple>
+    <script>
+        document.getElementById('fileInput').addEventListener('change', handleFileInput);
+        document.getElementById('imageInput').addEventListener('change', handleImageInput);
+        document.getElementById('videoInput').addEventListener('change', handleVideoInput);
+
+        function handleFileInput(event) {
+            const files = event.target.files;
+            console.log('Files selected:', files);
+            // Process your files here
+        }
+
+        function handleImageInput(event) {
+            const images = event.target.files;
+            console.log('Images selected:', images);
+            // Process your images here
+        }
+        
+        function handleVideoInput(event) {
+            const videos = event.target.files;
+            console.log('Videos selected:', videos);
+            // Process your videos here
+        }
+        const uploadimage =()=>{ 
+    if (imageUpload == null) return;
+    const imageRef = ref(storage, `images/${imageUpload.name + v4() }` );
+    uploadBytes(imageRef,imageUpload).then(()=>{
+      alert("Image uploaded");
+    });
+  };
+  
+        </script>
+
+</body>
+</html>
